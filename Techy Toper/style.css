@@ -1,0 +1,180 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 10px; /* Add padding for smaller screens */
+}
+
+.stuForm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items for smaller screens */
+    align-items: flex-start;
+    margin: 2%;
+    width: 90%;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+.form {
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 30%;
+    max-width: 400px; /* Restrict the width for smaller screens */
+    min-width: 300px; /* Maintain readability on smaller screens */
+}
+
+#studentData {
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 60%;
+    max-width: 700px;
+    overflow-x: auto;
+    height: 600px;
+}
+
+.form h1, #studentData h1 {
+    color: rgb(99, 99, 218);
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form input, .form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form button {
+    background-color: rgb(99, 99, 218);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 12px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.form button:hover {
+    background-color: rgb(79, 79, 198);
+}
+
+#studentData table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#studentData table thead {
+    background-color: rgb(99, 99, 218);
+    color: white;
+    text-align: left;
+}
+
+#studentData table th, #studentData table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#studentData table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#studentData table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+#studentData table td button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#studentData table td button:first-child {
+    background-color: #4caf50;
+    color: white;
+    margin-right: 5px;
+}
+
+#studentData table td button:first-child:hover {
+    background-color: #45a045;
+}
+
+#studentData table td button:last-child {
+    background-color: #f44336;
+    color: white;
+}
+
+#studentData table td button:last-child:hover {
+    background-color: #d32f2f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stuForm {
+        flex-direction: column; /* Stack form and table vertically */
+        align-items: center;
+    }
+
+    .form, #studentData {
+        flex: 1 1 100%; /* Take full width */
+        max-width: 100%;
+    }
+
+    #studentData {
+        height: auto; /* Allow height to adjust */
+    }
+
+    #studentData table th, #studentData table td {
+        font-size: 12px; /* Adjust font size for better visibility */
+    }
+}
+
+@media (max-width: 480px) {
+    .form h1, #studentData h1 {
+        font-size: 18px;
+    }
+
+    .form label, .form input, .form select, .form button {
+        font-size: 12px; /* Reduce font size for smaller screens */
+    }
+
+    #studentData table th, #studentData table td {
+        padding: 8px; /* Reduce padding for smaller screens */
+    }
+}
